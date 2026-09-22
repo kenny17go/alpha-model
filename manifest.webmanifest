@@ -1,1 +1,1 @@
-{"name":"Alpha Model","short_name":"Alpha","start_url":"./","display":"standalone","background_color":"#07111f","theme_color":"#07111f","lang":"zh-Hant"}
+{"name":"Alpha Model","short_name":"Alpha","start_url":"./","display":"standalone","background_color":"#07111f","theme_color":"#07111f","lang":"zh-Hant","icons":[{"src":"./alpha-model-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
