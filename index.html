@@ -1,7 +1,26 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07111f"><title>Alpha Model</title><style>
 *{box-sizing:border-box}body{margin:0;background:#07111f;color:#eaf1fb;font:14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:980px;margin:auto;padding:18px}.top{display:flex;justify-content:space-between;align-items:end}h1{margin:4px 0 0;font-size:36px}.muted{color:#8ea1b8}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:18px 0}.card,.row,.panel{background:#0d1a2b;border:1px solid #1b2b40;border-radius:16px;padding:14px}.n{font-size:24px;font-weight:800}.health{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 20px}.pill{padding:7px 10px;border-radius:999px;background:#12243a}.ok,.pos,.strengthened{color:#62d6a5}.waiting,.warning,.unchanged{color:#f1c66b}.error,.weakened{color:#ff7d8b}.watch{display:grid;gap:8px}.row{display:grid;grid-template-columns:72px 1fr 90px;align-items:center;cursor:pointer}.ticker{font-size:17px;font-weight:800}.gap{text-align:right;font-size:17px;font-weight:800}.na{color:#71849b}.back{border:0;background:none;color:#8ea1b8;font-size:16px;padding:8px 0}.hero{display:flex;justify-content:space-between;align-items:end;margin:18px 0}.hero .ticker{font-size:34px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.kpis{display:grid;gap:10px}.kpihead{display:flex;justify-content:space-between;gap:8px}.status{font-weight:800}.section{margin-top:22px}.panel p{line-height:1.55}.gate{font-size:16px;font-weight:750}@media(max-width:650px){.wrap{padding:14px}.cards,.grid2{grid-template-columns:1fr 1fr}.n{font-size:22px}h1{font-size:32px}.row{grid-template-columns:65px 1fr 78px}}
-</style></head><body><main class="wrap"><div id="shell"><div class="top"><div><div class="muted">ALPHA MODEL V0.1 · DASHBOARD V1.4</div><h1>Alpha Watchlist</h1></div><div class="muted">Supabase Live</div></div><div id="app" class="muted">載入資料中…</div></div></main><script>
+</style></head><body><main class="wrap"><div id="shell"><div class="top"><div><div class="muted">ALPHA MODEL V0.1 · DASHBOARD V1.5</div><h1>Alpha Watchlist</h1></div><div class="muted">Supabase Live</div></div><div id="app" class="muted">載入資料中…</div></div></main><script>
 const ZH={strengthened:"轉強",unchanged:"不變",weakened:"轉弱",mixed:"多空交錯",hold_base:"維持 Our Base",review_base:"重新檢視 Our Base",update_base:"更新 Our Base"};
+const EVIDENCE_ZH_MORE={
+AMZN:["AWS 營收 422 億美元，年增 37%；AWS 營業利益 166 億美元，高於去年同期 102 億美元。","北美營業利益 91 億美元，高於去年同期 75 億美元；國際營業利益 17 億美元，高於 15 億美元。","近 12 個月營運現金流 1,614 億美元，但 FCF 降至 -76 億美元，主因不動產／設備採購年增 661 億美元。"],
+GOOGL:["Q2 Google Cloud 營收 248 億美元，年增 82%；營業利益 88 億美元、營業利潤率 35.6%，backlog 5,140 億美元。","Google Search & other 營收增至 633 億美元，年增 17%；管理層表示 AI 改善使用者與廣告主體驗。","Q2 資本支出 449 億美元、約年增一倍，季度 FCF 為 -59 億美元；FY2026 Capex 指引提高至 1,950–2,050 億美元。"],
+SPCX:["Q2 Connectivity 營收 42.9 億美元，年增 66%；營業利益 16.6 億美元、年增 79%；Starlink 訂戶年增一倍至 1,200 萬。","近 90 天有兩次成功的 Starship V3 飛行測試並持續推進快速重複使用，但尚無可驗證的單位載荷成本。","Q2 總營收 78.1 億美元、年增 92%，調整後 EBITDA 35.4 億美元；但 Capex 大增至 183.7 億美元，其中 AI 約 158.3 億美元。"],
+"8033":["美國國防計畫首批訂單合計 1,520 架無人機、金額超過 760 萬美元，並已進入最後交付階段；美國 Ohio 產線已運作。","8 月營收新台幣 1.7614 億元，年增 74.96%、月增 49%；公司表示主要反映美國大型國防客戶交付時點。1–8 月營收年增 14.45%。","上半年營收新台幣 8.389 億元、毛利 3.081 億元，但營業虧損 218 萬元；Q2 營業利潤率約 0.1%。"]
+};
+const TRIGGER_ZH_MORE={
+"Update reverse-expectation thesis only when order visibility changes materially.":"只有訂單能見度出現重大改變時，才更新反向預期論點。",
+"Update Our Base/reverse expectations after sustained conversion evidence.":"需看到持續的訂單轉營收證據後，才更新 Our Base／反向預期。",
+"Update implied EPS potential only after margin evidence, not revenue headlines alone.":"必須看到利潤率證據後才調整隱含 EPS 潛力，不能只看營收新聞。",
+"Update Our Base when AWS revenue/margin path changes consolidated earnings materially.":"AWS 營收／利潤率路徑足以重大改變合併獲利時才更新 Our Base。",
+"Update only on sustained margin change, not seasonal quarter noise.":"只有持續性的利潤率改變才更新，不因季節性單季雜訊調整。",
+"Adjust confidence first; change Our Base if depreciation/capital intensity alters medium-term earnings/FCF.":"先調整信心；若折舊／資本密集度改變中期獲利或 FCF，再修改 Our Base。",
+"Update when Cloud contribution materially changes consolidated earnings path.":"Cloud 貢獻足以重大改變合併獲利路徑時才更新。",
+"Update Our Base when monetization evidence changes Search revenue/margin durability.":"當變現證據改變 Search 營收／利潤率的持續性時才更新 Our Base。",
+"Adjust confidence first, then medium-term Our Base if return profile changes structurally.":"先調整信心；若報酬結構出現結構性改變，再更新中期 Our Base。",
+"Update optionality value only after sustained operational evidence.":"只有持續性的營運證據出現後，才更新選擇權價值。",
+"Adjust confidence/optionality value if capital intensity remains structurally higher.":"若資本密集度持續結構性偏高，調降信心／選擇權價值。"
+};
 const EVIDENCE_ZH={
 ORCL:["OCI／IaaS 營收 74 億美元，年增 121%；整體雲端營收年增 62%。","RPO 達 6,640 億美元；Oracle 在 Q1 新增交付 850MW 資料中心容量與超過 30 萬顆 GPU。","Q1 營運現金流 231 億美元、資本支出 285 億美元，自由現金流為 -54 億美元；同時完成 200 億美元普通股發行。"],
 TSM:["Q2 毛利率 67.7%，季增 1.5 個百分點；成本改善與產能利用率提高，部分被海外廠稀釋抵銷。","2nm 在 Q2 占晶圓營收 3%，公司預期 Q3 快速放量；7nm 以下先進製程占晶圓營收 77%。","管理層指出較高產能利用率推升 Q2 毛利率；Q3 營收指引 446–458 億美元，先進製程需求持續強勁。"],
