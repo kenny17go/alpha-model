@@ -269,3 +269,63 @@ The long-term objective is a compounding research system:
 **automatic data collection → reusable industry module → compact AI context → AI interpretation → verified new knowledge → model memory → forecast validation → controlled model improvement**
 
 The system should become more accurate and more efficient through use, not merely larger.
+
+
+## 15. Candidate and Watching List have different research maturity — do not reverse them
+
+The promotion direction is:
+
+**Candidate Pool → Industry Module screening → Preliminary Our Base vs Market Expectation → material Expectation Gap → AI validation / research → Watching List**
+
+### Candidate Pool
+
+The Candidate list is the broad upstream pool of companies that may become Watching List names.
+
+It may contain many companies. Candidate-stage work should remain low-cost and standardized:
+- map the company to an existing industry module;
+- collect reusable standardized KPIs;
+- form a preliminary Our Base where the module supports it;
+- compare it with Market Expectation;
+- calculate or assess the preliminary Expectation Gap;
+- avoid deep bespoke research unless a meaningful gap appears.
+
+The purpose of Candidate is **to discover which companies deserve promotion to Watching List**.
+
+A company does not become Watching List merely because data is available or because it looks interesting. The key trigger is a potentially meaningful difference between Our Base and Market Expectation that deserves validation.
+
+### Promotion trigger
+
+When Candidate screening identifies a potentially material Expectation Gap, generate an AI Context Pack and use AI/research to validate:
+- whether the gap is real or caused by stale/incomplete data;
+- which KPI or assumption drives the gap;
+- whether the market may already reflect the information through another channel;
+- what evidence must be monitored next.
+
+Only after the company has been researched and the thesis is sufficiently understood should it be promoted to Watching List.
+
+### Watching List
+
+Watching List is the **higher-research-maturity list**.
+
+A Watching List company has already been researched and should normally have:
+- Our Base;
+- Market Expectation;
+- Expectation Gap;
+- key gap driver(s);
+- Research Memory;
+- material industry/company KPIs;
+- next validation point(s).
+
+The purpose of Watching List is not initial discovery. Its purpose is to **continuously monitor whether the previously researched expectation-gap thesis remains valid**.
+
+Watching List monitoring should focus on changes since the last validated research state. AI should receive existing Research Memory and current Context Pack rather than restarting research from zero.
+
+If the Expectation Gap closes, the thesis is invalidated, or continued monitoring is no longer justified, the company may be downgraded from Watching List rather than remaining there permanently.
+
+### System loop
+
+The intended full loop is:
+
+**Candidate Pool → Industry Module → Preliminary Our Base → Market Expectation → Expectation Gap → AI Validation → Watching List → Continuous Monitoring → Actual → Model Learning → improved Candidate screening**
+
+This direction must never be reversed. Candidate is the broad upstream screening pool; Watching List contains researched names selected for ongoing monitoring.
