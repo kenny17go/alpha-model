@@ -419,3 +419,16 @@ V1 explicitly does **not** include:
 Priority rule: complete and verify this V1 before resuming Financial Holding module expansion, additional Candidate modules, or Ask AI / Research Inbox frontend work.
 
 The purpose is to make the Watch List homepage answer: **What changed, why does it matter to the existing thesis, and which company should I open today?**
+
+
+## 19. Watch List Daily Changes V1 — completed (2026-09-25)
+
+The user has formally accepted V1. Preserve the stable implementation and do not reopen V1 for unrelated feature expansion.
+
+Delivered: Watch List homepage summary (Review Needed / Watch / No Material Change / Not Ready); rule-based KPI and Market Expectation changes against the saved Our Base baseline; triggered KPI evidence, previous/latest KPI status and values where available, dated evidence, updated Expectation Gap, and links to existing company detail. No notifications, AI frontend, new Candidate modules, or silent Our Base changes.
+
+Validation: database RPC and service-role tests passed; synthetic, transaction-rolled-back cases covered changed KPI, trigger hit, unchanged KPI, and Market Expectation revision; frontend syntax and synthetic alert/empty-state rendering passed. User accepted V1. Real future market-data changes still need observational validation as they arrive; do not misrepresent synthetic tests as production event history.
+
+At acceptance: 9 Watch List companies had comparable baselines with no material change detected; 3 had no validated Our Base baseline (Not Ready), not zero change. Historical KPI comparisons remain unavailable until second observations arrive.
+
+Next development: keep Watch List monitoring stable and observe live updates; Financial Holding industry module can resume only as a lightweight Candidate proving ground serving Watch List, not as an excuse to expand scope.
