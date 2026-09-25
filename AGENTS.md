@@ -329,3 +329,21 @@ The intended full loop is:
 **Candidate Pool → Industry Module → Preliminary Our Base → Market Expectation → Expectation Gap → AI Validation → Watching List → Continuous Monitoring → Actual → Model Learning → improved Candidate screening**
 
 This direction must never be reversed. Candidate is the broad upstream screening pool; Watching List contains researched names selected for ongoing monitoring.
+
+
+## 16. Frontend stability gate — required before feature work
+
+Treat the latest verified working GitHub Pages build as the Stable Baseline. Frontend changes are not complete merely because code was written or committed.
+
+For every frontend change:
+- make the smallest targeted change; avoid mixing refactors with feature work;
+- verify JavaScript syntax / parse integrity before considering the change complete;
+- smoke-test the boot path: Dashboard/Home → Watching List → Candidate List → Candidate Detail → back navigation;
+- confirm the page does not remain stuck on a loading placeholder and that runtime/API errors surface visibly;
+- preserve the Stable Baseline until the changed build is verified working;
+- if a regression appears, stop feature development, identify the root cause, and fix that cause before continuing;
+- do not use broad rollback/rewrite cycles when a minimal fix can restore the baseline.
+
+Long single-line HTML/JavaScript string assembly is a known regression risk. When touching such code, prefer small readable changes and do not perform a large formatting/refactor pass solely for style. Stability comes before cleanup.
+
+Ask AI / Research Inbox frontend work resumes only after the current baseline passes this stability gate.
