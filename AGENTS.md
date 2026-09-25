@@ -395,3 +395,27 @@ Industry modules are infrastructure serving the Alpha Model; they are not the fi
 Use Candidate results to observe whether a module is effective over time. Expand to additional industries only after there is enough practical evidence that the approach is useful. Do not scale merely because the schema is ready.
 
 If a proposed task makes Candidate more elaborate but does not materially improve Watching List research, monitoring, change detection, model learning, or Candidate screening efficiency, lower its priority and explicitly flag possible scope drift.
+
+
+## 18. Immediate next milestone: Watch List Daily Changes first
+
+The next implementation milestone is **Watch List Daily Changes｜今日監控**.
+
+V1 scope is intentionally narrow:
+- show it directly on the Watch List home page;
+- use existing stored data to identify what changed since the prior validated/research state;
+- surface only changes that are useful for deciding which Watching List company deserves attention;
+- distinguish at minimum: Review Needed, Watch, and No Material Change;
+- explain why a company is surfaced (for example KPI/Actual/Guidance/Market Expectation/Expectation Gap/Next Trigger change);
+- clicking a surfaced company should lead to its existing Watch List detail page.
+
+V1 explicitly does **not** include:
+- push/email/app notifications;
+- new Candidate industry modules;
+- Ask AI frontend integration;
+- automatic silent modification of Our Base;
+- broad UI redesign.
+
+Priority rule: complete and verify this V1 before resuming Financial Holding module expansion, additional Candidate modules, or Ask AI / Research Inbox frontend work.
+
+The purpose is to make the Watch List homepage answer: **What changed, why does it matter to the existing thesis, and which company should I open today?**
