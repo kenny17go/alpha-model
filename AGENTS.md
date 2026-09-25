@@ -432,3 +432,17 @@ Validation: database RPC and service-role tests passed; synthetic, transaction-r
 At acceptance: 9 Watch List companies had comparable baselines with no material change detected; 3 had no validated Our Base baseline (Not Ready), not zero change. Historical KPI comparisons remain unavailable until second observations arrive.
 
 Next development: keep Watch List monitoring stable and observe live updates; Financial Holding industry module can resume only as a lightweight Candidate proving ground serving Watch List, not as an excuse to expand scope.
+
+
+## 20. Financial Holding module v3 — active development (2026-09-25)
+
+Watch List Daily Changes V1 is accepted and frozen as the stable baseline. Financial Holding development has resumed with 2881 Fubon Financial as the single Candidate proving ground. Do not expand peers or add investment ratings merely to complete a template.
+
+Delivered this iteration:
+- Existing financial_holding template upgraded from v2 to v3, validation_status=in_progress, with 13 explicit evidence requirements across bank, life, subsidiaries, group and wealth.
+- New service_role-only SECURITY INVOKER RPC alpha_financial_holding_evidence_audit(uuid), returning source-linked available/missing evidence, period, unit, and a truthful completeness flag. The existing chain RPC includes evidence_audit without changing its four-node structure.
+- Candidate 2881 detail UI now says four nodes have representative observations rather than implying complete monitoring; displays missing KPI evidence. No change to Watch List homepage or other Candidate templates.
+- At implementation: 7 of 13 requirements had stored sourced observations, 6 were missing: bank credit cost, life CSM, bank profit, life profit, group capital adequacy, and wealth/securities fee income. NPL is not credit cost; life net-worth ratio is not CSM; securities profit is not all subsidiary earnings; asset-management AUM is not wealth fee income. These are data coverage facts, not company-quality judgments.
+- Verified live service_role candidate payload for 2881 (13/7/6), INDI payload, and dashboard payload; frontend JavaScript syntax and synthetic financial evidence UI passed. GitHub Pages visual/device smoke test remains observational.
+
+Next: review the already discovered 2026-09-22 Fubon MOPS Chinese presentation (status review_required) and authoritative bank/life financial disclosures; extract only source-verified missing evidence with units, reporting periods and accounting basis. Never backfill missing KPIs from adjacent proxy metrics or fabricated values. Do not infer trends from one observation or compare YTD with a single quarter. Keep module lightweight and feed verified learnings into Watch List only after appropriate validation.
