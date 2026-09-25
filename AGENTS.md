@@ -347,3 +347,51 @@ For every frontend change:
 Long single-line HTML/JavaScript string assembly is a known regression risk. When touching such code, prefer small readable changes and do not perform a large formatting/refactor pass solely for style. Stability comes before cleanup.
 
 Ask AI / Research Inbox frontend work resumes only after the current baseline passes this stability gate.
+
+
+## 17. Watch List is the product core; Candidate is a proving ground — do not confuse priorities
+
+This distinction is a hard product guardrail.
+
+### Watch List is the main Alpha Model workspace
+
+The primary purpose of Alpha Model is to support **ongoing research and monitoring of Watching List companies**. Development effort should primarily improve the system's ability to remember the existing thesis and detect what changed.
+
+For a Watching List company, the system should preserve and continuously update:
+- Our Base;
+- Market Expectation;
+- Expectation Gap;
+- key thesis / gap drivers;
+- Research Memory;
+- material industry and company-specific KPIs;
+- next validation points;
+- changes since the last validated research state;
+- Actual outcomes and subsequent model learning.
+
+The central monitoring question is:
+
+**What changed since the last validated view, and does that change affect our previous expectation-gap thesis?**
+
+### Candidate / 潛力名單 is a low-cost proving ground and screening layer
+
+Candidate is **not the main research destination**. It has two supporting jobs:
+1. cheaply screen companies for potentially meaningful Expectation Gaps that may deserve deeper research and eventual promotion to Watching List;
+2. test whether an industry module is useful and reusable enough to support that screening efficiently.
+
+Candidate work should therefore remain deliberately lightweight. Do not keep deepening Candidate analysis merely to make the industry module look complete. A module only needs to be good enough to improve screening and reduce repeated research.
+
+### Priority rule
+
+When deciding what to build next, use this order:
+
+**Watching List monitoring / research memory / change detection → Candidate screening usefulness → industry-module refinement → broader industry expansion.**
+
+Do not let module validation become the project itself. Do not spend disproportionate development time perfecting INDI / NXPI / ON or any Candidate peer set while Watching List monitoring remains underdeveloped.
+
+Industry modules are infrastructure serving the Alpha Model; they are not the final product.
+
+### Expansion rule
+
+Use Candidate results to observe whether a module is effective over time. Expand to additional industries only after there is enough practical evidence that the approach is useful. Do not scale merely because the schema is ready.
+
+If a proposed task makes Candidate more elaborate but does not materially improve Watching List research, monitoring, change detection, model learning, or Candidate screening efficiency, lower its priority and explicitly flag possible scope drift.
