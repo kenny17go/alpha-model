@@ -478,3 +478,8 @@ Evidence audit now returns 13/13 available and template validation_status=eviden
 ### Comparable History V1 — first trend-comparable evidence
 
 2881 now has its first true trend-comparable core KPI: Fubon FHC reported ROE 14.01% for 2026 Q1 and 18.00% for 2026 H1, both normalized as the same FHC reported YTD annualized-return basis and backed by official issuer results. Comparable History therefore moves from 2 to 3 items with a second observation, with 1 trend_comparable and 2 ytd_bridge_only. our_base_gate changes to review_evidence_not_auto_update: this means human review is allowed, NOT that ROE improvement is assumed sustainable and NOT that Our Base may be silently changed. The remaining 10 core evidence items still await a second comparable observation.
+
+
+### Comparable History V1 — three trend-comparable KPIs
+
+2881 now has 5/13 core evidence items with a second observation. Three are true trend_comparable: Taipei Fubon Bank NII YoY growth (25.2% Q1 → 27.3% H1 → 29% Jan-Aug), Fubon Life IFRS17 CSM closing balance (NT$414.7bn Q1 → NT$428.9bn H1), and Fubon FHC reported ROE (14.01% Q1 → 18.00% H1). Bank/life YTD net-profit pairs remain ytd_bridge_only. Comparable History v1.1 exposes arithmetic deltas for trend-comparable items only; percentage metrics use percentage-point changes, stock/value metrics may also show relative percent change. Arithmetic direction is descriptive Change Detection only, not thesis direction. our_base_gate remains review_evidence_not_auto_update; no silent Our Base changes.
