@@ -483,3 +483,8 @@ Evidence audit now returns 13/13 available and template validation_status=eviden
 ### Comparable History V1 — three trend-comparable KPIs
 
 2881 now has 5/13 core evidence items with a second observation. Three are true trend_comparable: Taipei Fubon Bank NII YoY growth (25.2% Q1 → 27.3% H1 → 29% Jan-Aug), Fubon Life IFRS17 CSM closing balance (NT$414.7bn Q1 → NT$428.9bn H1), and Fubon FHC reported ROE (14.01% Q1 → 18.00% H1). Bank/life YTD net-profit pairs remain ytd_bridge_only. Comparable History v1.1 exposes arithmetic deltas for trend-comparable items only; percentage metrics use percentage-point changes, stock/value metrics may also show relative percent change. Arithmetic direction is descriptive Change Detection only, not thesis direction. our_base_gate remains review_evidence_not_auto_update; no silent Our Base changes.
+
+
+### Financial v4.2 — Our Base Review V1
+
+2881 Comparable History now has 7/13 evidence items with a second observation and 5 true trend_comparable items. The two new comparable bank items are derived from official Taipei Fubon Bank 115Q2 disclosure using exactly the Q1 basis: Q2 standalone net fee income = H1 NT$16.971326bn - Q1 NT$8.892992bn = NT$8.078334bn; Q2 provision-burden proxy uses standalone line 58200 provision NT$0.726221bn divided by average Mar/Jun net loans and annualized = 10.87 bps versus Q1 30.13 bps. Provision burden remains explicitly NOT pure credit cost. Our Base Review V1 is now open because 5 trend-comparable items exist, but it is human_review_only and auto_update_our_base=false. It surfaces evidence and arithmetic changes only; it must not label changes bullish/bearish, score them, or silently revise Our Base.
