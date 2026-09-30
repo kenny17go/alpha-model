@@ -488,3 +488,21 @@ Evidence audit now returns 13/13 available and template validation_status=eviden
 ### Financial v4.2 — Our Base Review V1
 
 2881 Comparable History now has 7/13 evidence items with a second observation and 5 true trend_comparable items. The two new comparable bank items are derived from official Taipei Fubon Bank 115Q2 disclosure using exactly the Q1 basis: Q2 standalone net fee income = H1 NT$16.971326bn - Q1 NT$8.892992bn = NT$8.078334bn; Q2 provision-burden proxy uses standalone line 58200 provision NT$0.726221bn divided by average Mar/Jun net loans and annualized = 10.87 bps versus Q1 30.13 bps. Provision burden remains explicitly NOT pure credit cost. Our Base Review V1 is now open because 5 trend-comparable items exist, but it is human_review_only and auto_update_our_base=false. It surfaces evidence and arithmetic changes only; it must not label changes bullish/bearish, score them, or silently revise Our Base.
+
+
+### Next core upgrade after Financial Holding phase — Expectation Gap History
+
+After the current Financial Holding module reaches its phase-completion gate, the next Watch List core upgrade is one integrated research chain:
+
+**Consensus Revision Velocity → Expectation Gap History → Thesis Change**
+
+Scope and guardrails:
+- This is a Watch List / Research Memory upgrade, not a new scoring or ranking system.
+- Consensus Revision Velocity should preserve dated consensus observations and show how Market Expectation changes over 7D / 30D / 90D where source coverage permits. Never fabricate missing historical consensus.
+- Expectation Gap History should preserve both sides of the gap through time: Our Base and Market Expectation. A gap change must be attributable to Market Expectation revision, an explicit Our Base revision, or both.
+- Our Base revisions must remain explicit human-reviewed research-state changes with evidence/rationale; never infer or silently overwrite them from price, consensus, KPI changes, or AI output.
+- Thesis Change should explain what changed since the last reviewed research state and why it matters. It is not a bullish/bearish label, recommendation, score movement, or automatic trading signal.
+- Keep Valuation/RR separate from fundamental Expectation Gap. Price movement alone is not a thesis change.
+- Preferred research flow: Evidence → Consensus Revision → Our Base → Expectation Gap → Valuation Hurdle → Thesis Change.
+- Do not begin this upgrade by adding UI panels first. First define historical data semantics, comparability, provenance, and change-detection rules; then expose the verified chain in the Watch List UI.
+- Do not interrupt the current Financial Holding phase to build this early. Finish the financial phase gate first, then switch the main development line here.
