@@ -506,3 +506,10 @@ Scope and guardrails:
 - Preferred research flow: Evidence → Consensus Revision → Our Base → Expectation Gap → Valuation Hurdle → Thesis Change.
 - Do not begin this upgrade by adding UI panels first. First define historical data semantics, comparability, provenance, and change-detection rules; then expose the verified chain in the Watch List UI.
 - Do not interrupt the current Financial Holding phase to build this early. Finish the financial phase gate first, then switch the main development line here.
+
+
+### Expectation History V1 — semantic layer started
+
+Financial Holding V4.x single-company phase gate is complete and frozen as the proving-ground baseline: 13/13 evidence, transmission ready, 5 trend-comparable KPIs, human Our Base review active, auto-update Our Base off. Main development now moves to the Watch List research-memory chain: Consensus Revision Velocity → Expectation Gap History → Thesis Change.
+
+Expectation History V1 begins with semantics, not UI scoring. New service-role-only alpha_watchlist_expectation_history_status() requires same company, fiscal period, exact consensus metric and accounting basis. Missing 7D/30D/90D history returns Not Ready and is never interpolated. Current live validation: 12 Watch List companies, only AMZN has a true comparable consensus pair; GOOGL's older EPS and newer GAAP EPS are intentionally not paired; 7D/30D/90D velocity are all currently not ready. New alpha_model_operating_status() separates API liveness from latest data ingestion and latest model review. Dashboard V2.2 surfaces API Live, data last written, model last reviewed, and expectation-history readiness so a fresh page load cannot be mistaken for fresh research data. Edge alpha-dashboard-api v13 returns model_status and expectation_history with api_version 6. Service-role read grants are limited to the internal model-history tables needed by these SECURITY INVOKER RPCs; anon/authenticated access was not expanded.
