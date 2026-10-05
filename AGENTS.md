@@ -556,3 +556,16 @@ Promotion Readiness states: `ready_for_watchlist_review`, `module_evidence_ready
 First Candidate baseline: 2026-10-05, 9 active Candidate companies. Watch List baseline: 2026-10-05, 12 core companies. Watch List snapshots run Monday 08:25 Taipei; Candidate snapshots run Monday 08:26 Taipei, after the existing Monday run and maintenance.
 
 Frontend Dashboard V2.7 adds a third top-level tab: `Weekly Review｜週報`. The first week must explicitly display Baseline; it must not imply week-over-week change until a second snapshot exists. Edge `alpha-dashboard-api` v16 / API payload v9 exposes both `weekly_watchlist` and `weekly_candidate`.
+
+
+### Weekly Research Priority V1
+
+Weekly Research Priority is a deterministic research-attention layer, not an Alpha Score or investment ranking. Function: `public.alpha_weekly_research_priority(date)`, SECURITY INVOKER, service-role-only. It consumes Watch List Weekly and Candidate Weekly packets and returns up to five priorities for each layer.
+
+Watch List priority order: human review / model revision → material weekly Gap movement → Reviewed-vs-Live Gap divergence → strong 90D/30D Revision → meaningful live Gap with high thesis confidence → large lower-confidence Gap → routine monitor. Companies with `data_status=not_ready` are excluded from the Top 5.
+
+Candidate priority order: Watch List review readiness → new evidence / module / conversion / readiness progress → module evidence ready → validation bottleneck near completion → near-complete evidence gap → fundamental divergence / conversion tracking → routine build.
+
+Baseline 2026-10-05 produces Watch List research priority GOOGL, NVDA, AMZN, TSM, UBER and Candidate priority 2881, INDI, GRAB, SE, 9802. These are research-attention ranks only. They must not be presented as expected-return ranks, buy/sell calls, Alpha Scores, or automatic promotion decisions.
+
+Dashboard V2.8 adds the Research Priority section at the top of Weekly Review. Edge `alpha-dashboard-api` v17 / API payload v10 exposes `weekly_priority`.
