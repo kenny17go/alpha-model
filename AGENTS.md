@@ -530,3 +530,14 @@ alpha_watchlist_thesis_change_status() completes the first integrated chain: Con
 ### Financial V4.2 UX — Key Monitor
 
 2881 candidate detail now puts a Key Monitor summary above Module Validation. Its purpose is prioritization, not scoring: distinguish the primary earnings driver from the largest recent comparable change and from counter-signals. Current bank read: NII growth is the primary operating axis, but the 27.3% H1 YTD YoY vs 29% latest official update is not treated as a formal trend because the stored comparison basis differs; Q1→Q2 provision-burden proxy fell 30.13→10.87 bps (-19.26 bps), while standalone net fee income fell 88.93→80.78 TWD 100m (-9.16%). Life CSM (+3.42%) and Group ROE (+3.99pp) are displayed as higher-level confirmations, not as bank KPI substitutes. Next Validation prioritizes same-basis Q3 NII, persistence of lower provision burden, and fee-income stabilization. Provision burden remains explicitly a proxy, not pure credit cost. Do not convert this layer into bullish/bearish scoring or automatic Our Base changes.
+
+
+### Weekly Alpha Review V1 — Snapshot / Change Packet
+
+The weekly report foundation is database-first. `public.alpha_weekly_snapshots` stores immutable weekly research-state snapshots. Snapshot payload V1 captures the current dashboard, Daily Changes, Revision Velocity, Expectation Gap History, Thesis Change, and Model Operating Status. The first production baseline is 2026-10-05 and contains all 12 core Watch List companies.
+
+`public.alpha_capture_weekly_snapshot(date)` is SECURITY INVOKER, service-role-only, insert-only for a new date, and returns `already_exists` rather than overwriting an existing weekly snapshot. It never edits Our Base or Thesis. A pg_cron job `alpha-weekly-snapshot-monday-taipei` runs at 00:25 UTC Monday (08:25 Taipei), after the existing 08:15 pipeline maintenance.
+
+`public.alpha_weekly_change_packet(date)` is SECURITY INVOKER and service-role-only. It compares a weekly snapshot with the immediately preceding snapshot and emits per-company week-over-week state: Our Base, Market Expectation, Live Gap, weekly Gap change in percentage points, 7D/30D/90D Revision Velocity, Thesis state/text, and a descriptive change signal. Signals are research-memory labels only: `human_review_required`, `our_base_revision`, `thesis_revision`, `gap_compression`, `gap_expansion`, `revision_momentum`, `not_ready`, or `no_material_weekly_change`. They are not scores, rankings, recommendations, or automatic model edits.
+
+Guardrail: Weekly Snapshot → Weekly Change Packet → later Research Priority / AI interpretation. Program/database remembers; AI interprets. Weekly reporting may recommend a human Our Base review but must never silently rewrite Our Base or Thesis.
