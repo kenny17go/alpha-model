@@ -591,3 +591,16 @@ Historical reconstruction must never read future Our Base, Thesis, Consensus, Ca
 Edge `alpha-dashboard-api` v19 / API payload v12 accepts optional `?week=YYYY-MM-DD`. When supplied, only date-scoped weekly RPCs use that date; live dashboard data remains live. The response also exposes `weekly_archive` and `weekly_selected_date`. Invalid date query strings are ignored and fall back to the latest weekly snapshot.
 
 Dashboard V2.10 adds `Weekly Archive｜歷史週報` to Weekly Review. Selecting a week reloads that week’s Watch List Weekly, Candidate Weekly, Research Priority and Bottom Line. The current first archive entry is 2026-10-05 Baseline.
+
+
+### Weekly Outcome Review V1
+
+Weekly Outcome Review evaluates whether the prior week’s Research Priority received supporting, weakening, reversing, progressing, or still-unresolved evidence in the next weekly snapshot. Function: `public.alpha_weekly_outcome_review(date)`, SECURITY INVOKER, service-role-only.
+
+It is deliberately not a one-week return score. Watch List follow-up states include `continued`, `reversed`, `supported`, `weakened`, `new_signal`, `needs_review`, `unresolved`, and `data_not_ready`. Candidate follow-up states include `progressed`, `evidence_added`, `changed`, `unresolved`, and `data_not_ready`.
+
+The first snapshot (2026-10-05) returns `not_ready` because Outcome Review requires a second weekly snapshot. Transaction-only validation confirmed: continued GOOGL Gap compression → `continued`; stronger NVDA 90D revision → `supported`; INDI validation moving from `needs_revision` to `pass` / Watch List review readiness → `progressed`. Synthetic rows were rolled back.
+
+Dashboard V2.11 adds `Outcome Review｜上週研究重點後續` between Weekly Bottom Line and Research Priority. Until a second snapshot exists it must explicitly show that Outcome Review is not ready. Edge `alpha-dashboard-api` v20 / API payload v13 exposes `weekly_outcome` and supports the existing historical `?week=YYYY-MM-DD` scope.
+
+Guardrail: Outcome Review measures research-process follow-through and evidence evolution. It must never equate short-term price movement with model correctness and never auto-edit Our Base, Thesis, rankings, recommendations, or Candidate promotion.
