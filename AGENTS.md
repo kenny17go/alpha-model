@@ -580,3 +580,14 @@ The function explicitly returns `interpretation_mode = rule_based_no_ai`. This m
 Baseline 2026-10-05 Bottom Line highlights GOOGL Reviewed-vs-Live Gap compression, NVDA and AMZN 90D Revision Momentum, and Candidate priorities 2881 / INDI / GRAB. These are research attention summaries, not investment recommendations.
 
 Dashboard V2.9 places Weekly Bottom Line above Research Priority. Edge `alpha-dashboard-api` v18 / API payload v11 exposes `weekly_bottom_line`.
+
+
+### Weekly Archive V1
+
+Weekly Archive preserves read-only historical weekly research views. Function: `public.alpha_weekly_archive(integer)`, SECURITY INVOKER, service-role-only. It lists up to 26 weeks by default (hard capped at 104), joins Watch List and Candidate snapshot availability, and reconstructs the historical headline / focus lists only from the immutable snapshots for that date.
+
+Historical reconstruction must never read future Our Base, Thesis, Consensus, Candidate evidence, or promotion state. The archive function therefore delegates historical interpretation to the date-scoped Weekly Change Packet → Research Priority → Bottom Line chain.
+
+Edge `alpha-dashboard-api` v19 / API payload v12 accepts optional `?week=YYYY-MM-DD`. When supplied, only date-scoped weekly RPCs use that date; live dashboard data remains live. The response also exposes `weekly_archive` and `weekly_selected_date`. Invalid date query strings are ignored and fall back to the latest weekly snapshot.
+
+Dashboard V2.10 adds `Weekly Archive｜歷史週報` to Weekly Review. Selecting a week reloads that week’s Watch List Weekly, Candidate Weekly, Research Priority and Bottom Line. The current first archive entry is 2026-10-05 Baseline.
