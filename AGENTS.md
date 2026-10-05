@@ -541,3 +541,18 @@ The weekly report foundation is database-first. `public.alpha_weekly_snapshots` 
 `public.alpha_weekly_change_packet(date)` is SECURITY INVOKER and service-role-only. It compares a weekly snapshot with the immediately preceding snapshot and emits per-company week-over-week state: Our Base, Market Expectation, Live Gap, weekly Gap change in percentage points, 7D/30D/90D Revision Velocity, Thesis state/text, and a descriptive change signal. Signals are research-memory labels only: `human_review_required`, `our_base_revision`, `thesis_revision`, `gap_compression`, `gap_expansion`, `revision_momentum`, `not_ready`, or `no_material_weekly_change`. They are not scores, rankings, recommendations, or automatic model edits.
 
 Guardrail: Weekly Snapshot → Weekly Change Packet → later Research Priority / AI interpretation. Program/database remembers; AI interprets. Weekly reporting may recommend a human Our Base review but must never silently rewrite Our Base or Thesis.
+
+
+### Weekly Alpha Review V1 — Dual Layer
+
+Weekly Review is split into two research layers rather than one universal score.
+
+Watch List Weekly uses `alpha_weekly_snapshots` + `alpha_weekly_change_packet()` to compare Our Base, Market Expectation, Reviewed/Live Gap, Revision Velocity, Thesis state/text, and review signals week over week.
+
+Candidate Weekly uses `alpha_candidate_weekly_snapshots`, `alpha_candidate_weekly_state()`, `alpha_capture_candidate_weekly_snapshot(date)`, and `alpha_candidate_weekly_change_packet(date)`. It tracks setup progress, monitoring/live-data coverage, module validation, financial/conversion-chain status, evidence observation counts, and Promotion Readiness. Candidate Weekly never fabricates Expectation Gap and never automatically promotes a company into the Watch List.
+
+Promotion Readiness states: `ready_for_watchlist_review`, `module_evidence_ready`, `validation_required`, `evidence_gap`, `building`. Weekly signals: `promotion_ready`, `evidence_added`, `module_progress`, `conversion_change`, `readiness_progress`, `no_material_weekly_change`, plus `baseline` for the first snapshot.
+
+First Candidate baseline: 2026-10-05, 9 active Candidate companies. Watch List baseline: 2026-10-05, 12 core companies. Watch List snapshots run Monday 08:25 Taipei; Candidate snapshots run Monday 08:26 Taipei, after the existing Monday run and maintenance.
+
+Frontend Dashboard V2.7 adds a third top-level tab: `Weekly Review｜週報`. The first week must explicitly display Baseline; it must not imply week-over-week change until a second snapshot exists. Edge `alpha-dashboard-api` v16 / API payload v9 exposes both `weekly_watchlist` and `weekly_candidate`.
