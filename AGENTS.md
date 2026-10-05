@@ -569,3 +569,14 @@ Candidate priority order: Watch List review readiness → new evidence / module 
 Baseline 2026-10-05 produces Watch List research priority GOOGL, NVDA, AMZN, TSM, UBER and Candidate priority 2881, INDI, GRAB, SE, 9802. These are research-attention ranks only. They must not be presented as expected-return ranks, buy/sell calls, Alpha Scores, or automatic promotion decisions.
 
 Dashboard V2.8 adds the Research Priority section at the top of Weekly Review. Edge `alpha-dashboard-api` v17 / API payload v10 exposes `weekly_priority`.
+
+
+### Weekly Bottom Line V1
+
+Weekly Bottom Line is currently deterministic, not LLM-generated. Function: `public.alpha_weekly_bottom_line(date)`, SECURITY INVOKER, service-role-only. It consumes `alpha_weekly_research_priority(date)` and converts the top Watch List / Candidate research priorities into a concise Chinese weekly interpretation packet with `headline`, `points`, `watchlist_focus`, and `candidate_focus`.
+
+The function explicitly returns `interpretation_mode = rule_based_no_ai`. This must remain visible in the UI until a real LLM service is intentionally connected. Do not describe the current output as AI-generated. The reason for this layer is to keep the deterministic evidence / change-detection chain authoritative while leaving a clean future handoff point for AI interpretation.
+
+Baseline 2026-10-05 Bottom Line highlights GOOGL Reviewed-vs-Live Gap compression, NVDA and AMZN 90D Revision Momentum, and Candidate priorities 2881 / INDI / GRAB. These are research attention summaries, not investment recommendations.
+
+Dashboard V2.9 places Weekly Bottom Line above Research Priority. Edge `alpha-dashboard-api` v18 / API payload v11 exposes `weekly_bottom_line`.
