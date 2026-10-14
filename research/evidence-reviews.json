@@ -1,0 +1,105 @@
+{
+  "schema_version": "external_evidence_reviews_v1",
+  "reviews": [
+    {
+      "review_date": "2026-10-12",
+      "published_date": "2026-10-14",
+      "title": "10/12 Alpha Watchlist 外部研究 Evidence Review",
+      "status": "reviewed_not_model_applied",
+      "summary": "營收、Consensus、供應鏈與融資證據分層核對；不複製同事 Alpha Score / Antifragility modifier；Our Base 與 Thesis 不變。",
+      "source_type": "colleague_weekly_report",
+      "source_doc": "research/evidence-review-2026-10-12.md",
+      "guardrail": "External review is not weekly snapshot or approved model revision. Evidence and hypotheses remain distinct.",
+      "items": [
+        {
+          "ticker": "TSM",
+          "priority": "P1",
+          "status": "verified_primary",
+          "conclusion": "2026/9 營收 5,118.57 億元、YoY +54.6%；未證明超越發布前 Consensus。",
+          "next_check": "對照發布前市場預期，建立 2027 EPS 營收→毛利→獲利橋接。",
+          "source_url": "https://pr.tsmc.com/english/news/3343"
+        },
+        {
+          "ticker": "GOOGL",
+          "priority": "P1",
+          "status": "consensus_corrob_thesis_unverified",
+          "conclusion": "2027 EPS 市場預期約 $15.2；TPU→Cloud 變現正循環仍屬 thesis。",
+          "next_check": "核對同基準 EPS Consensus、TPU 外部銷售、GCP 毛利及 FCF。",
+          "source_url": "https://stockanalysis.com/stocks/googl/forecast/"
+        },
+        {
+          "ticker": "NVDA",
+          "priority": "P1",
+          "status": "consensus_corrob_interpretation",
+          "conclusion": "FY2027 EPS Consensus 約 $9.31；revision 可追，但抵銷 AI credit risk 尚未證明。",
+          "next_check": "保留財年基準，量化 EPS revision 與 forward multiple 壓縮。",
+          "source_url": "https://stockanalysis.com/stocks/nvda/forecast/"
+        },
+        {
+          "ticker": "AAPL",
+          "priority": "P1",
+          "status": "reported_not_company_confirmed",
+          "conclusion": "媒體報導 iPhone 18 Pro 系列零組件訂單下修至少 15%；不等於最終銷售下降 15%。",
+          "next_check": "查官方出貨／通路庫存／供應鏈財報與 Guidance。",
+          "source_url": "https://www.reuters.com/business/retail-consumer/apple-cuts-iphone-18-pro-orders-due-soft-demand-nikkei-asia-reports-2026-10-09/"
+        },
+        {
+          "ticker": "AMZN",
+          "priority": "P2",
+          "status": "industry_report_hypothesis",
+          "conclusion": "AI 融資緊縮與資料中心建設阻力是風險訊號；尚無已量化的 AMZN EPS 影響。",
+          "next_check": "AWS 成長、資本支出、折舊、租賃及 FCF 連動。",
+          "source_url": "https://www.ft.com/content/9c13d40e-d2b2-45d5-921c-a68cd4b308f9"
+        },
+        {
+          "ticker": "ORCL",
+          "priority": "P2",
+          "status": "reported_financing_not_closed",
+          "conclusion": "AI 晶片融資洽談屬媒體報導，不等於已完成交易。",
+          "next_check": "確認融資條款及增量 ROIC、利息、折舊和 FCF。",
+          "source_url": "https://www.wsj.com/tech/oracle-broadcom-and-spacex-seek-blockbuster-debt-deals-to-pay-for-ai-chips-848e8032"
+        },
+        {
+          "ticker": "UBER",
+          "priority": "P2",
+          "status": "thesis_hypothesis",
+          "conclusion": "AV 技術碎片化使平台受益仍屬假設。",
+          "next_check": "驗證 AV 交易轉化、take rate、現金流與合作排他性。",
+          "source_url": "https://stockanalysis.com/stocks/uber/forecast/"
+        },
+        {
+          "ticker": "NET",
+          "priority": "P3",
+          "status": "product_fact_economics_unverified",
+          "conclusion": "AI Agents 工具發布是產品事實，尚非營收與 FCF 貢獻的直接證據。",
+          "next_check": "測付費採用率、毛利與新增 FCF。",
+          "source_url": "https://developers.cloudflare.com/changelog/product/agents/"
+        },
+        {
+          "ticker": "MSFT",
+          "priority": "P3",
+          "status": "valuation_judgement",
+          "conclusion": "Business quality 高但 priced-in 是估值判斷，並非已驗證的 Gap 結論。",
+          "next_check": "核對 FY27 Street、RPO 轉化、Cloud 毛利及 capex。",
+          "source_url": ""
+        },
+        {
+          "ticker": "TSLA",
+          "priority": "P3",
+          "status": "mixed_facts_and_forecast",
+          "conclusion": "交車、FCF 預測與估值混合，尚無完整一致口徑核實。",
+          "next_check": "以原廠交車、季報 gross margin、FCF 與 Energy 為準。",
+          "source_url": ""
+        },
+        {
+          "ticker": "SPCX",
+          "priority": "HOLD",
+          "status": "instrument_identity_required",
+          "conclusion": "SpaceX／SPCX 報價、issuer 與 equity mapping 尚未確認；不得當作已驗證估值。",
+          "next_check": "核對證券名稱、掛牌發行人、share class 與實際經濟曝險。",
+          "source_url": ""
+        }
+      ]
+    }
+  ]
+}
