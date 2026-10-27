@@ -1,0 +1,80 @@
+{
+  "schema_version": "weekly_research_view_v1",
+  "week": "2026-10-26",
+  "published_date": "2026-10-27",
+  "status": "research_review_not_model_applied",
+  "headline": "股價大跌不等於 Alpha 消失；優先驗證 SE、INDI 的公司特有風險及 GOOGL／AMZN／ORCL 的估值假設",
+  "data_caveat": "週報 10/26 snapshot 的 Our Base / Consensus 未見週變化，最新資料匯入 10/11；無變化不等於已確認基本面無變化。股價歸因是有來源的可能解釋，非單一確定原因。",
+  "items": [
+    {
+      "ticker": "SE",
+      "list": "Candidate",
+      "severity": "high",
+      "observed": "10/19–10/23 一週股價約 -20.4%，10/23 收盤約 $74.63（第三方週報；價格仍需與行情來源交叉核對）",
+      "facts": "10/20 傳出 Monee 可能 IPO 與 Sea Cloud 新業務；DBS 指出 Shopee 即時配送、補貼與競爭可能拖累 2027 利潤率。Monee 貸款成長快於調整後 EBITDA，信用成本值得注意。",
+      "interpretation": "可能同時反映 Shopee 利潤率壓力、Monee 分拆不確定性及成長股風險偏好下降；不能斷言 IPO 消息單獨造成下跌。",
+      "alpha": "尚未證明原有成長 Thesis 被推翻；但盈利轉換與信用成本假設需要優先重新驗證。",
+      "next": "核對 Q3 Shopee adjusted EBITDA、補貼/物流成本、Monee NPL/撥備與分拆官方披露；先修正跨期 KPI 定義。",
+      "sources": [
+        "https://www.dbs.com.sg/private-banking/aics/templatedata/article/recentdevelopment/data/en/DBSV/102026/SE_US_10192026.xml",
+        "https://www.dbs.com.sg/treasures/aics/templatedata/article/recentdevelopment/data/en/DBSV/102026/SE_US_10212026.xml",
+        "https://longbridge.com/en/quote/SQU.SG/news/302954467"
+      ]
+    },
+    {
+      "ticker": "INDI",
+      "list": "Candidate",
+      "severity": "high",
+      "observed": "6/30 至 10/20 股價約 -59.2%（第三方歷史分解），10/23 報導價格約 $1.59；非本週單週跌幅。",
+      "facts": "Q2 2026 營收約 $64m、年增約 24%，但公司持續虧損；10/19 TD Cowen 目標價調降至 $2、10/22 B. Riley 降至 $5，反映預期分歧與風險重估。",
+      "interpretation": "市場可能下修未獲利成長股估值倍數，並質疑設計案轉量產、毛利改善及資金需求；尚無充分同業價格資料可歸因為整體車用半導體產業問題。",
+      "alpha": "INDI 目前無已驗證的 Candidate Expectation Gap；成長轉獲利 Thesis 需驗證，不把股價下跌直接等同財報不佳。",
+      "next": "核對 Q3 營收/指引、毛利與營運現金流、設計案量產節奏、可轉債及股本稀釋；NXPI/ON 只作產業參考。",
+      "sources": [
+        "https://www.trefis.com/data/companies/indi",
+        "https://www.benzinga.com/quote/indi",
+        "https://www.sec.gov/Archives/edgar/data/1841925/000119312526340396/indi-20260630.htm"
+      ]
+    },
+    {
+      "ticker": "GOOGL",
+      "list": "Watch List",
+      "severity": "review",
+      "observed": "近期股價承壓；本週快照 Gap +3.52%，未變動。",
+      "facts": "市場關注 AI Capex 回報、Google Cloud 與搜尋業務的 AI 競爭。",
+      "interpretation": "可能是估值與投資報酬率疑慮，不足以直接認定 Cloud/Search Thesis 失效。",
+      "alpha": "維持待驗證，未改 Our Base。",
+      "next": "財報後核對 Cloud 增速、利潤率、Capex 與 Consensus 修訂。",
+      "sources": [
+        "https://www.reuters.com/technology/big-tech-earnings-test-ai-boom-amid-market-turmoil-2026-10-27/"
+      ]
+    },
+    {
+      "ticker": "AMZN",
+      "list": "Watch List",
+      "severity": "review",
+      "observed": "近期股價偏弱；本週快照 Gap +6.57%，未變動。",
+      "facts": "AI 投資支出、AWS 成長與 FCF 受到市場檢驗。",
+      "interpretation": "需分辨資本支出時點與長期 AWS 回報。",
+      "alpha": "尚無證據確認 Alpha 改變。",
+      "next": "財報後核對 AWS、Capex、FCF 和 EPS Consensus。",
+      "sources": [
+        "https://www.reuters.com/technology/big-tech-earnings-test-ai-boom-amid-market-turmoil-2026-10-27/"
+      ]
+    },
+    {
+      "ticker": "ORCL",
+      "list": "Watch List",
+      "severity": "review",
+      "observed": "近期估值受壓；本週快照 Gap +13.64%，未變動。",
+      "facts": "市場關注 AI 資料中心投資的資金成本與營收轉換。",
+      "interpretation": "Gap 大不代表風險低；需要重新檢驗 OCI RPO 轉營收的可實現性。",
+      "alpha": "維持待驗證，不自動調整 Our Base。",
+      "next": "檢查 RPO、OCI 容量交付、資本支出、融資與現金流。",
+      "sources": [
+        "https://www.reuters.com/technology/big-tech-earnings-test-ai-boom-amid-market-turmoil-2026-10-27/"
+      ]
+    }
+  ],
+  "guardrail": "Research commentary only; no automated Our Base, Consensus, Thesis or Candidate promotion changes."
+}
