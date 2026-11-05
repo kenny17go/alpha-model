@@ -1,0 +1,53 @@
+{
+  "schema_version": "weekly_research_view_v1",
+  "week": "2026-11-02",
+  "published_date": "2026-11-05",
+  "status": "research_review_not_model_applied",
+  "headline": "本週優先重新驗證 ORCL 融資成本、SE 電商獲利轉換、INDI 現金消耗與量產；股價波動不直接等於 Alpha 改變。",
+  "data_caveat": "11/02 週報最新資料匯入仍停留在 10/11、模型審查 9/24；Gap 與 Thesis 的零變化不代表已核實本週基本面。股價下跌通常是多因素，以下區分已證實事件與可能市場解讀；INDI Q3 財報預定 11/05 美股盤後，尚未發布。",
+  "items": [
+    {
+      "ticker": "ORCL",
+      "list": "Watch List",
+      "severity": "high",
+      "observed": "11/02 融資公告後股價單日下跌約 8.8%；本週快照 Gap +13.64%（未更新）。",
+      "facts": "Oracle 公告擬籌資約 200 億美元，股票及債券各約 100 億美元，用於 AI／雲端擴張等用途。",
+      "interpretation": "股權稀釋、債務利息與 AI 資本支出規模，可能使市場重新評估 OCI 訂單轉收入與自由現金流的時點。公告是事實，並不能證明公司長期 AI 需求下降。",
+      "alpha": "風險上升／待重新驗證；Gap 數字尚未根據融資與最新預期重算，不能直接當成投資機會。",
+      "next": "更新股份數、債務利息及 FCF 情境；核對 RPO→OCI 營收、Capex、同期間 EPS Consensus。",
+      "sources": [
+        "https://www.reuters.com/business/oracle-offer-10-billion-bonds-2026-11-02/"
+      ]
+    },
+    {
+      "ticker": "SE",
+      "list": "Candidate",
+      "severity": "high",
+      "observed": "10 月中下旬股價顯著回落；不把單一消息當成確定跌價原因。",
+      "facts": "10/02 DBS 將 SE 降至 Hold、目標價由 148 美元降至 105 美元，理由包括 Shopee 快速配送、補貼與區域競爭對利潤率的壓力。10/19 股價下跌時未有新財報失利。另有 Sea Cloud 及 Monee 潛在上市計畫的市場報導。",
+      "interpretation": "更可能是市場重估 2027 電商利潤率、競爭投資與新業務成本，而非已確認核心 GMV 崩壞。Monee 信貸風險也需跟蹤；新業務投資額未確認。",
+      "alpha": "成長→獲利轉換的 Alpha 受到挑戰，但尚未證實 Thesis 失效；Candidate 尚無已驗證 Expectation Gap。",
+      "next": "核對下一季 Shopee GMV、adjusted EBITDA、物流/補貼支出、Monee 貸款逾期與撥備；確認 Sea Cloud 支出及官方公告。",
+      "sources": [
+        "https://in.investing.com/news/stock-market-news/dbs-cuts-sea-target-as-shopee-spending-weighs-on-profit-growth-5616616",
+        "https://www.quiverquant.com/news/Sea%2BLimited%2BSlides%2Bas%2BInvestors%2BWeigh%2BMargin%2BPressure%2Band%2Ba%2BRisk-Off%2BTech%2BBackdrop"
+      ]
+    },
+    {
+      "ticker": "INDI",
+      "list": "Candidate",
+      "severity": "high",
+      "observed": "7 月底至 11 月初股價累計下跌約五成以上；此為多月變化，不是單週報酬。",
+      "facts": "Q2 2026 官方財報營收 6,400 萬美元、年增 24%，GAAP 營業虧損 3,510 萬美元、非 GAAP 營業虧損 890 萬美元；公司先前預估 Q3 營收 6,700–7,300 萬美元，並公告 11/05 美股盤後公布 Q3。",
+      "interpretation": "市場可能擔心持續虧損、現金消耗與雷達設計案量產轉換；價格大跌不是已發布 Q3 財報失利的證據。ON 11/02 公布 Q3 營收年增 11%、FCF 成長，顯示不能僅以 INDI 下跌推論整個車用半導體產業同步惡化，且 ON 業務結構不同。",
+      "alpha": "成長與獲利轉換論點進入關鍵驗證期；尚無已驗證 Candidate Gap，也未證實 Thesis 被推翻。",
+      "next": "11/05 財報後核對 Q3 營收、核心業務收入、非 GAAP 營業虧損、現金變動、Q4 指引與雷達量產；NXPI/ON 僅為產業參考，不納入 Candidate。",
+      "sources": [
+        "https://investors.indie.inc/news/news-details/2026/indie-Reports-Second-Quarter-2026-Results/default.aspx",
+        "https://investors.indie.inc/news/news-details/2026/indie-Sets-Date-for-Third-Quarter-2026-Earnings-Release-and-Conference-Call/default.aspx",
+        "https://investor.onsemi.com/node/23401/pdf"
+      ]
+    }
+  ],
+  "guardrail": "Research commentary only; no automated Our Base, Consensus, Thesis or Candidate promotion changes."
+}
