@@ -175,9 +175,9 @@ async function researchReviews(){
 }
 async function renderWeeklyResearchView(date){
  const root=document.querySelector("#weekly-research-view");if(!root)return;
- if(String(date)!=="2026-10-26"){root.innerHTML='<div class="muted">本週尚未發表人工研究觀點；歷史週報數據照常保留。</div>';return}
+ if(!["2026-10-26","2026-11-02"].includes(String(date))){root.innerHTML='<div class="muted">本週尚未發表人工研究觀點；歷史週報數據照常保留。</div>';return}
  try{
-  const r=await fetch("./research/weekly-view-2026-10-26.json",{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);
+  const r=await fetch("./research/weekly-view-"+encodeURIComponent(String(date))+".json",{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);
   const d=await r.json();if(!root.isConnected)return;
   root.innerHTML='<h3>Research View｜本週研究觀點（人工審查）</h3><p class="muted">'+esc(d.headline)+'</p><p class="muted">'+esc(d.data_caveat)+'</p><div class="validationlist">'+(d.items||[]).map(x=>'<div class="card"><b>'+esc(x.ticker)+' · '+esc(x.list)+'</b><div class="muted" style="margin-top:6px"><b>價格／事件：</b>'+esc(x.observed)+'</div><div style="margin-top:8px"><b>已知證據：</b>'+esc(x.facts)+'</div><div style="margin-top:6px"><b>可能原因（非定論）：</b>'+esc(x.interpretation)+'</div><div style="margin-top:6px"><b>Alpha 判斷：</b>'+esc(x.alpha)+'</div><div style="margin-top:6px"><b>下一步：</b>'+esc(x.next)+'</div><div class="muted" style="margin-top:8px">來源：'+(x.sources||[]).map((u,i)=>'<a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">來源 '+(i+1)+'</a>').join(' · ')+'</div></div>').join('')+'</div><p class="muted">研究觀點不自動修改 Our Base、Consensus、Thesis 或 Candidate 身分。</p>';
  }catch(e){root.innerHTML='<div class="muted">研究觀點載入失敗：'+esc(String(e.message||e))+'</div>'}
